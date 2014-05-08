@@ -1,4 +1,6 @@
-Keyboard-input-Project-My-Screen
+Important Notes: Keyboard-input-Project-My-Screen
 ================================
 
-First repository to GitHub with a macro to get keyboard input in Project My Screen for Windows Phone 8.1
+1.- Press F12 hotkey and click in the middle of Q and S to start keyboard recognition.
+2.- If you minimize or change the scale in Project My Screen, you must reset the script.
+3.- Enjoy ;)
