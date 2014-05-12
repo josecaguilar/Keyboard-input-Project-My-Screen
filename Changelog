@@ -1,0 +1,20 @@
+Build Alpha 0.3:
+- Added punctuation marks
+- Fixed Enter Numpad hotkey
+- Fixed issue with x86 architecture
+- Fixed issue with CapsLock hotkey
+
+Build Alpha 0.2.1:
+- Performance improvements
+- Code optimization
+- Fixed issue with characters - and . with numpad
+- Added Windows Hotkey to Start
+- Added more special characters (second screen)
+
+Build Alpha 0.2:
+- Fixed capital letters issue with Right Shift & Left Shift hotkeys
+- Added numpad
+- Added some initial special characters (first screen)
+
+Build Alpha 0.1:
+- Initial Release
