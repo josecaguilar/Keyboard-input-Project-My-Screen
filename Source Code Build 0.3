@@ -1,0 +1,655 @@
+SetTitleMatchMode 2          ; Match title of windows by part of the name
+WinActivate, Project My Screen App
+#IfWinActive Project My Screen App
+
+pulsado=0
+MsgBox, Pulsa F12 y a continuación pincha con el ratón en el centro de la tecla Q y luego en el centro de la tecla S para coger las coordenadas. Nota: Para escribir las tildes dejar pulsado el botón de puntuación + vocal, para acceder a los emoticonos pulse Ctrl Izquierda.
+
+
+F12::
+KeyWait, LButton, D
+KeyWait, LButton
+MouseGetPos, XX1, YY1
+KeyWait, LButton, D
+KeyWait, LButton
+MouseGetPos, XX2, YY2
+XX := (XX2-XX1)
+YY := (YY2-YY1)
+pulsado=1
+MsgBox, Escalado de teclado OK. Enjoy! :)
+return
+
+if(pulsado=1)
+{
+
+; Implementacion Abecedario
+
+q::MouseClick, left, XX1, YY1, 1, 0
+w::MouseClick, left, XX1+XX, YY1, 1, 0
+e::MouseClick, left, XX1+2*XX, YY1, 1, 0
+r::MouseClick, left, XX1+3*XX, YY1, 1, 0
+t::MouseClick, left, XX1+4*XX, YY1, 1, 0
+y::MouseClick, left, XX1+5*XX, YY1, 1, 0
+u::MouseClick, left, XX1+6*XX, YY1, 1, 0
+i::MouseClick, left, XX1+7*XX, YY1, 1, 0
+o::MouseClick, left, XX1+8*XX, YY1, 1, 0
+p::MouseClick, left, XX1+9*XX, YY1, 1, 0
+
+a::MouseClick, left, XX1, YY1+YY, 1, 0
+s::MouseClick, left, XX1+XX, YY1+YY, 1, 0
+d::MouseClick, left, XX1+2*XX, YY1+YY, 1, 0
+f::MouseClick, left, XX1+3*XX, YY1+YY, 1, 0
+g::MouseClick, left, XX1+4*XX, YY1+YY, 1, 0
+h::MouseClick, left, XX1+5*XX, YY1+YY, 1, 0
+j::MouseClick, left, XX1+6*XX, YY1+YY, 1, 0
+k::MouseClick, left, XX1+7*XX, YY1+YY, 1, 0
+l::MouseClick, left, XX1+8*XX, YY1+YY, 1, 0
+ñ::MouseClick, left, XX1+9*XX, YY1+YY, 1, 0
+
+z::MouseClick, left, XX1+1.5*XX, YY1+2*YY, 1, 0
+x::MouseClick, left, XX1+2.5*XX, YY1+2*YY, 1, 0
+c::MouseClick, left, XX1+3.4*XX, YY1+2*YY, 1, 0
+v::MouseClick, left, XX1+4.4*XX, YY1+2*YY, 1, 0
+b::MouseClick, left, XX1+5.4*XX, YY1+2*YY, 1, 0
+n::MouseClick, left, XX1+6.4*XX, YY1+2*YY, 1, 0
+m::MouseClick, left, XX1+7.4*XX, YY1+2*YY, 1, 0
+
+
+; Implementacion acentuacion:
+
+; [á]
+´ & a::
+MouseClick, left, XX1, YY1+YY, 1, 0, D
+Sleep, 1000
+MouseClick, left, XX1+1.8*XX, YY1, 1, 2, U
+return
+
+; [é]
+´ & e::
+MouseClick, left, XX1+2*XX, YY1, 1, 0, D
+Sleep, 1000
+MouseClick, left, XX1+3*XX, YY1-YY, 1, 2, U
+return
+
+; [í]
+´ & i::
+MouseClick, left, XX1+7*XX, YY1, 1, 0, D
+Sleep, 1000
+MouseClick, left, XX1+6*XX, YY1-YY, 1, 2, U
+return
+
+; [ó]
+´ & o::
+MouseClick, left, XX1+8*XX, YY1, 1, 0, D
+Sleep, 1000
+MouseClick, left, XX1+7*XX, YY1-YY, 1, 2, U
+return
+
+; [ú]
+´ & u::
+MouseClick, left, XX1+6*XX, YY1, 1, 0, D
+Sleep, 1000
+MouseClick, left, XX1+5*XX, YY1-YY, 1, 2, U
+return
+
+
+; Implementacion Teclado Numerico:
+
+Numlock::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+1::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1, YY1, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+2::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+XX, YY1, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+3::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+2*XX, YY1, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+4::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+3*XX, YY1, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+5::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+4*XX, YY1, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+6::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+5*XX, YY1, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+7::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+6*XX, YY1, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+8::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+7*XX, YY1, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+9::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+8*XX, YY1, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+0::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+9*XX, YY1, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+Numpad1::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1, YY1, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+Numpad2::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+XX, YY1, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+Numpad3::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+2*XX, YY1, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+Numpad4::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+3*XX, YY1, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+Numpad5::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+4*XX, YY1, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+Numpad6::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+5*XX, YY1, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+Numpad7::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+6*XX, YY1, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+Numpad8::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+7*XX, YY1, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+Numpad9::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+8*XX, YY1, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+Numpad0::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+9*XX, YY1, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+
+; Implementacion Simbolos:
+
+; [,]
+,::MouseClick, left, XX1+6.6*XX, YY1+3*YY, 1, 0
+
+; [.]
+.::MouseClick, left, XX1+7.8*XX, YY1+3*YY, 1, 0
+
+NumpadDot::MouseClick, left, XX1+7.8*XX, YY1+3*YY, 1, 0
+
+; [at]
+<^>!2::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1, YY1+YY, 1, 0
+return
+
+; [#]
+<^>!3::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+XX, YY1+YY, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+; [€]
+<^>!e::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+2*XX, YY1+YY, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+; [%]
+Shift & 5::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+3*XX, YY1+YY, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+; [&]
+Shift & 6::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+4*XX, YY1+YY, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+; [*]
+*::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+5*XX, YY1+YY, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+; [*]
+NumpadMult::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+5*XX, YY1+YY, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+; [(]
+Shift & 8::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+6*XX, YY1+YY, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+; [)]
+Shift & 9::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+7*XX, YY1+YY, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+; [-]
+-::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+8*XX, YY1+YY, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+; [-]
+NumpadSub::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+8*XX, YY1+YY, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+; [\]
+<^>!º::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+9.2*XX, YY1+YY, 1, 0
+return
+
+; [!]
+Shift & 1::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+1.5*XX, YY1+2*YY, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+; [;]
+Shift & ,::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+2.5*XX, YY1+2*YY, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+; [:]
+Shift & .::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+3.4*XX, YY1+2*YY, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+; [']
+'::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+4.4*XX, YY1+2*YY, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+; ["]
+Shift & 2::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+5.4*XX, YY1+2*YY, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+; [?]
+Shift & '::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+6.4*XX, YY1+2*YY, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+; [/]
+Shift & 7::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+7.6*XX, YY1+2*YY, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+; [/]
+NumpadDiv::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+7.6*XX, YY1+2*YY, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+; [^]
+Shift & `::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1, YY1+2*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1, YY1+YY, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+; [
+<^>!`::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1, YY1+2*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+XX, YY1+YY, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+; ]
+<^>!+::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1, YY1+2*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+2*XX, YY1+YY, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+; [{]
+<^>!´::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1, YY1+2*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+3*XX, YY1+YY, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+; [}]
+<^>!ç::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1, YY1+2*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+4*XX, YY1+YY, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+; [<]
+<::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1, YY1+2*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+5*XX, YY1+YY, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+; [<]
+Shift & <::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1, YY1+2*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+6*XX, YY1+YY, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+; [$]
+Shift & 4::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1, YY1+2*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+7*XX, YY1+YY, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+; [·]
+Shift & 3::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1, YY1+2*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+1.5*XX, YY1+2*YY, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+; [+]
++::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1, YY1+2*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+3.4*XX, YY1+2*YY, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+; [+]
+NumpadAdd::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1, YY1+2*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+3.4*XX, YY1+2*YY, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+; [=]
+Shift & 0::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1, YY1+2*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+4.4*XX, YY1+2*YY, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+; [_]
+Shift & -::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1, YY1+2*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+5.4*XX, YY1+2*YY, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+; [|]
+<^>!1::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1, YY1+2*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+7.4*XX, YY1+2*YY, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+; [~]
+!Numpad1::
+MouseClick left, XX1, YY1+3*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1, YY1+2*YY, 1, 0
+Sleep, 10
+MouseClick, left, XX1+6.4*XX, YY1+2*YY, 1, 0
+Sleep, 10
+MouseClick left, XX1, YY1+3*YY, 1, 0
+return
+
+; Emoticonos [:)]
+LCtrl::
+MouseClick, left, XX1+2.2*XX, YY1+3*YY, 1, 0
+return
+
+; Mayusculas
+LShift::
+MouseClick, left, XX1, YY1+2*YY, 1, 0
+return
+
+RShift::
+MouseClick, left, XX1, YY1+2*YY, 1, 0
+return
+
+CapsLock::
+MouseClick, left, XX1, YY1+2*YY, 2, 0
+return
+
+; Borrado
+Backspace::
+MouseClick, left, XX1+9*XX, YY1+2*YY, 1, 0,D
+KeyWait Backspace
+MouseClick, left, XX1+9*XX, YY1+2*YY, 1, 0,U
+return
+
+Del::
+MouseClick, left, XX1+9*XX, YY1+2*YY, 1, 0
+return
+
+Space::MouseClick, left, XX1+4.5*XX, YY1+3*YY, 1, 0
+
+Enter::MouseClick, left, XX1+9*XX, YY1+3*YY, 1, 0
+
+NumpadEnter::MouseClick, left, XX1+9*XX, YY1+3*YY, 1, 0
+
+; Inicio con Windows Key
+LWin::MouseClick, left, XX1+4.5*XX, YY1+5*YY, 1, 0
+RWin::MouseClick, left, XX1+4.5*XX, YY1+5*YY, 1, 0
+
+}
+
+#IfWinActive
